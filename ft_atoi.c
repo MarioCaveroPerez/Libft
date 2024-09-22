@@ -3,32 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marioper <marioper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dyanez-m <dyanez-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:27:48 by marioper          #+#    #+#             */
-/*   Updated: 2024/09/22 10:46:44 by marioper         ###   ########.fr       */
+/*   Updated: 2024/09/22 11:21:47 by dyanez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_atoi(const char *s)
+int	ft_atoi(const char *s)
 {
-    int x;
-    int y;
+	int	x;
+	int	y;
 
-    x = 0;
-    y = 1;
-    while(*s == 32 || (*s >= 9 && *s <= 13))
-        s++;
-    if (*s == '-')
-        y *= -1;
-    if (*s == '-' || *s == '+')
-        s++;
-    while (*s >= '0' && *s <= '9')
-    {
-        x = x * 10 + *s - '0';
-        s++;
-    }
-    return (x * y);
+	x = 0;
+	y = 1;
+	while (*s == 32 || (*s >= 9 && *s <= 13))
+		s++;
+	if (*s == '-')
+		y *= -1;
+	if (*s == '-' || *s == '+')
+		s++;
+	while (*s >= '0' && *s <= '9')
+	{
+		x = x * 10 + *s - '0';
+		s++;
+	}
+	return (x * y);
 }

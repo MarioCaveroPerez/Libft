@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marioper <marioper@student.42.fr>          +#+  +:+       +#+         #
+#    By: dyanez-m <dyanez-m@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/10 15:27:23 by marioper          #+#    #+#              #
-#    Updated: 2024/09/20 23:57:44 by marioper         ###   ########.fr        #
+#    Updated: 2024/09/22 11:59:05 by dyanez-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,9 +28,11 @@ all: $(NAME)
 $(NAME): $(SRC) $(OBJ)
   
 
-clean: $(RM) $(OBJ)
+clean: 
+	$(RM) $(OBJ)
 
-fclean: $(RM) $(NAME)
+fclean: clean
+	$(RM) $(NAME)
 
 re: fclean all
 
