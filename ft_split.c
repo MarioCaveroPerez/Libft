@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dyanez-m <dyanez-m@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marioper <marioper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 10:36:38 by marioper          #+#    #+#             */
-/*   Updated: 2024/09/22 11:50:36 by dyanez-m         ###   ########.fr       */
+/*   Updated: 2024/09/22 14:27:33 by marioper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	word_count(const char *str, char c);
 static char	*fill_word(const char *str, int start, int end);
 static void	*ft_free(char **strs, int count);
-static void	ft_initiate_vars(size_t *i, int *j, int *s_word);
+static int	ft_initiate_vars(size_t *i, int *j, int *s_word, const char *s);
 
 char	**ft_split(const char *s, char c)
 {
@@ -24,7 +24,8 @@ char	**ft_split(const char *s, char c)
 	int		j;
 	int		s_word;
 
-	ft_initiate_vars(&i, &j, &s_word);
+	if (ft_initiate_vars(&i, &j, &s_word, s) == -1)
+		return (NULL);
 	res = ft_calloc((word_count(s, c) + 1), sizeof(char *));
 	if (!res)
 		return (NULL);
@@ -45,11 +46,14 @@ char	**ft_split(const char *s, char c)
 	return (res);
 }
 
-static void	ft_initiate_vars(size_t *i, int *j, int *s_word)
+static int	ft_initiate_vars(size_t *i, int *j, int *s_word, const char *s)
 {
+	if (!s)
+		return (-1);
 	*i = 0;
 	*j = 0;
 	*s_word = -1;
+	return (0);
 }
 
 static void	*ft_free(char **strs, int count)

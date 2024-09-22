@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dyanez-m <dyanez-m@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marioper <marioper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 10:36:26 by marioper          #+#    #+#             */
-/*   Updated: 2024/09/22 11:36:41 by dyanez-m         ###   ########.fr       */
+/*   Updated: 2024/09/22 14:19:59 by marioper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putendl_fd(char *str, int fd)
 {
 	int	i;
 
+	if (!str)
+		return ;
 	i = 0;
 	while (str[i])
 	{
